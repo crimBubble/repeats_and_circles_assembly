@@ -83,6 +83,14 @@ Run the `collect_ecc-SCL_reads.py` script. By default, it uses the `COMPARATIVE_
 python3 collect_ecc-SCL_reads.py
 ```
 
+Optional: Remove the prefix added within the ECCsplorer pipeline to match the original readnames.
+
+```bash
+for dir in ecc_assembly/SCL*/; do
+sed -i 's/^[^_]*_//' "${dir}reads.lst"
+done
+```
+
 Use the created read lists to extract the reads from your original reads in fastq format.
 
 ```bash
