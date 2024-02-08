@@ -67,7 +67,7 @@ For the first round of the assembly MEGAHIT is used (or further details see ``me
 
 ```bash
 mkdir megahit_out
-megahit -r <long.reads.fastq> -o meaghit_out --presets meta-large -t 6 --min-contig-len 5000
+megahit -r <long.reads.fastq> -o megahit_out --presets meta-large -t 6 --min-contig-len 5000
 ```
 
 For the second round of the assembly SPAdes is used (or further details see ``spades -h``, depending on your resources adjust the cpu and memory limits with ``-t`` and ``-m`` options):
