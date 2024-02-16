@@ -14,7 +14,7 @@ in_file = "COMPARATIVE_CLUSTER_TABLE_eccCANDIDATES_filter.csv"
 dtype_dic = {'Cluster': str, 'Supercluster': str}
 cluster_dict = pd.read_csv(in_file,
                            skiprows=0, index_col=0,
-                           usecols=[0, 1], header=1,
+                           usecols=[0, 1], header=0,
                            dtype=dtype_dic,
                            delimiter='\t', ).squeeze().to_dict()
 
