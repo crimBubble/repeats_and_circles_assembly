@@ -14,7 +14,7 @@ Despite the many cheap and fast ways to generate genomic data, good and exact ge
 
 Here, we combine methods from repeat identification and genome assembly to derive these robust consensuses. We provide workflows for several use cases, such as
 
-(<b>(1)</b>) consensus building from clustered short reads of non-model genomes, 
+(1) consensus building from clustered short reads of non-model genomes, 
 
 (2) circle reconstruction from genome-wide amplification setups, and 
 
