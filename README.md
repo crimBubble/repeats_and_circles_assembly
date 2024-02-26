@@ -39,10 +39,10 @@ Find detailed instructions on the workflow [here](skim_assemble/README.md).
 
 ## Citation 
 
-High-fidelity (repeat) consensus sequences from short reads using combined read clustering and assembly (2023) 
+High-fidelity (repeat) consensus sequences from short reads using combined read clustering and assembly.
 
-Ludwig Mann, Kristin Balasch, Nicola Schmidt, Tony Heitkam
+Ludwig Mann, Kristin Balasch, Nicola Schmidt, Tony Heitkam.
 
-Faculty of biology, Technische Universität Dresden, 01069 Dresden
+<i>BMC Genomics</i> <b>25</b>, 109 (2024).
 
-[Publication in preparation].
+[10.1186/s12864-023-09948-4](https://doi.org/10.1186/s12864-023-09948-4)
