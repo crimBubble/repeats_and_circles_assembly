@@ -2,8 +2,6 @@
 import pandas as pd
 from typing import Union
 
-# Note: No strand check
-
 default_m6_header = "6 delim=\\t qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore"
 
 
@@ -293,7 +291,14 @@ def convert_m6(blast_input, gff_mode, gff_type, m6_header):
     # gff_raw["score"] = blast_input["bitscore"]
 
     # strand
-    gff_raw["strand"] = "."
+    if gff_raw["start"] <= gff_raw["end"]:
+        gff_raw["strand"] = "+"
+    else:
+        # If 'start' is greater than 'end', swap them and set the strand to '-'
+        temp_start = gff_raw["start"]
+        gff_raw["start"] = gff_raw["end"]
+        gff_raw["end"] = temp_start
+        gff_raw["strand"] = "-"
 
     # phase
     gff_raw["phase"] = "."
