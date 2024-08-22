@@ -290,15 +290,20 @@ def convert_m6(blast_input, gff_mode, gff_type, m6_header):
     gff_raw["score"] = "."
     # gff_raw["score"] = blast_input["bitscore"]
 
+    # strand (old, broken)
+    #if gff_raw["start"] <= gff_raw["end"]:
+    #    gff_raw["strand"] = "+"
+    #else:
+    #    # If 'start' is greater than 'end', swap them and set the strand to '-'
+    #    temp_start = gff_raw["start"]
+    #    gff_raw["start"] = gff_raw["end"]
+    #    gff_raw["end"] = temp_start
+    #    gff_raw["strand"] = "-"
+    
     # strand
-    if gff_raw["start"] <= gff_raw["end"]:
-        gff_raw["strand"] = "+"
-    else:
-        # If 'start' is greater than 'end', swap them and set the strand to '-'
-        temp_start = gff_raw["start"]
-        gff_raw["start"] = gff_raw["end"]
-        gff_raw["end"] = temp_start
-        gff_raw["strand"] = "-"
+    gff_raw["strand"] = "+"
+    gff_raw.loc[gff_raw["start"] > gff_raw["end"], "strand"] = "-"
+    gff_raw.loc[gff_raw["start"] > gff_raw["end"], ["start", "end"]] = gff_raw.loc[gff_raw["start"] > gff_raw["end"], ["end", "start"]].values
 
     # phase
     gff_raw["phase"] = "."
