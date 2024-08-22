@@ -311,9 +311,9 @@ def convert_m6(blast_input, gff_mode, gff_type, m6_header):
     # attribute
     def combine_columns(row, col):
         new_line = str()
-        for i in range(0, len(col) - 1):
+        for i in range(0, len(col) - 0):
             new_line += f'{col[i]}={str(row[col[i]])};'
-        return new_line
+        return new_line.rstrip(";")
 
     gff_raw["attributes"] = blast_input.apply(combine_columns, axis=1, col=m6_header)
 
