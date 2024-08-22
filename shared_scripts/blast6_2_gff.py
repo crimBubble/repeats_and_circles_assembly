@@ -317,7 +317,7 @@ def convert_m6(blast_input, gff_mode, gff_type, m6_header):
 
     gff_raw["attributes"] = blast_input.apply(combine_columns, axis=1, col=m6_header)
 
-    return gff_raw
+    return gff_raw.sort_values(by=['seqid', 'start', 'end'])
 
 
 def write_gff(m6_file, gff_all_hits_list_sorted):
