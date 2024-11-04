@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import pandas as pd
+import os
 from typing import Union
 
 default_m6_header = "6 delim=\\t qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore"
@@ -325,7 +326,7 @@ def write_gff(m6_file, gff_all_hits_list_sorted):
       """
 
     if m6_file.endswith(".m6"):
-        gff_file = m6_file.rstrip(".m6") + ".gff"
+        gff_file = os.path.splitext(m6_file)[0] + ".gff"
     else:
         gff_file = m6_file + ".gff"
 
